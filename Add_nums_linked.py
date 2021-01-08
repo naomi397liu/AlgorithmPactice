@@ -15,30 +15,38 @@ class LinkedList:
         self.tail = None
  
     # Function to reverse the linked list
+
     def reverse(self):
-        prev = None
-        self.tail = self.head
-        current = self.head
-        while(current is not None):
-            prev = current #assign prev to current
-            current = current.next #make next value current value
-        self.head = prev
+        #current is the new order and prev is the previous order
+        
+        prev = self.head
+        current = self.head 
+        place_holder = self.head
+        while(place_holder is not None):
+            current = prev.next #current = a, b
+            current.next = prev # b->a, current.next
+            prev = prev.next
+            place_holder = place_holder.next # place_holder = b
+            print(f'current = {current.data}, place holder = {place_holder.data} {place_holder.next.data} {place_holder.next.next.data} prev = {prev.data}')
+        self.head = self.tail
+        return self.printList()
  
     # Utility function to print the linked LinkedList
     def printList(self):
-        while(self.head):
-            print(self.head.data)
-            self.head = self.head.next
+        current = self.head
+        while(current != None):
+            print(current.data)
+            current = current.next
 
     def append(self, data):
         """Append node with data to end of list."""
 
         new_node = Node(data)
-
+        
         if self.head is None:
             self.head = new_node
 
-        if self.tail is not None:
+        if self.tail is not None: #if the list is not empty
             # Did list start as empty?
             self.tail.next = new_node
 
