@@ -19,16 +19,16 @@ class LinkedList:
     def reverse(self):
         #current is the new order and prev is the previous order
         
-        prev = self.head
+        prev = None
         current = self.head 
-        place_holder = self.head
-        while(place_holder is not None):
+        place_holder = self.head.next
+        while(head):
+            current = self.head 
+            place_holder = self.head.next
             current = prev.next #current = a, b
             current.next = prev # b->a, current.next
             prev = prev.next
             place_holder = place_holder.next # place_holder = b
-            print(f'current = {current.data}, place holder = {place_holder.data} {place_holder.next.data} {place_holder.next.next.data} prev = {prev.data}')
-        self.head = self.tail
         return self.printList()
  
     # Utility function to print the linked LinkedList
