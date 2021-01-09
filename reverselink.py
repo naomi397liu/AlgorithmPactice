@@ -5,5 +5,11 @@ def reverseList(self, head):
     """
     prev = None
     while head:
-        head.next, head, prev = prev, head.next, head
+        tempPrev = prev 
+        tempHead = head 
+        tempNext = head.next
+
+        head.next = tempPrev
+        prev = tempHead 
+        head = tempNext
     return prev

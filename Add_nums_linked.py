@@ -20,20 +20,20 @@ class LinkedList:
         #current is the new order and prev is the previous order
         
         prev = None
-        current = self.head 
-        place_holder = self.head.next
-        while(head):
-            current = self.head 
-            place_holder = self.head.next
-            current = prev.next #current = a, b
-            current.next = prev # b->a, current.next
-            prev = prev.next
-            place_holder = place_holder.next # place_holder = b
-        return self.printList()
+        head = self.head
+        while head:
+            tempPrev = prev 
+            tempHead = head 
+            tempNext = head.next
+
+            head.next = tempPrev
+            prev = tempHead 
+            head = tempNext
+        return prev
  
     # Utility function to print the linked LinkedList
-    def printList(self):
-        current = self.head
+    def printList(self, node1):
+        current = node1
         while(current != None):
             print(current.data)
             current = current.next
