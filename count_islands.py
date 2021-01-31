@@ -23,7 +23,6 @@ def numIslands(self, grid):
         for c, cell in enumerate(row):
             if (r,c) not in seen and int(cell) != 0:
                 seen.update(visit_cell(r, c, grid, seen))
-                print(r,c)
                 island_count += 1
             
     return island_count
