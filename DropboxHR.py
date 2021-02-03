@@ -23,4 +23,6 @@ def unscramble(wordlist, keypads):
 wordlist = ['PLEA', 'PLEASE', 'APPLE', 'DOG']
 keypads = ['PBNEDAL', 'OESADLP', 'MOTLAJF', 'GBLKORD'] #[2,3,0,1]
 
-print(unscramble(wordlist, keypads))
+# print(unscramble(wordlist, keypads))
+
+
