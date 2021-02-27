@@ -11,3 +11,8 @@ def maximumWealth(self, accounts):
         if sum(row) > maximum:
             maximum = sum(row)
     return maximum
+
+def maximumWealth(self, accounts):
+    for i, row in enumerate(accounts):
+            accounts[i] = sum(row)
+    return max(accounts)
