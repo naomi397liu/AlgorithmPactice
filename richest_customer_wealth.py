@@ -16,3 +16,19 @@ def maximumWealth(self, accounts):
     for i, row in enumerate(accounts):
             accounts[i] = sum(row)
     return max(accounts)
+
+def maximumWealth(self, accounts):
+        """
+        :type accounts: List[List[int]]
+        :rtype: int
+        """
+        
+        
+    def helper(accounts, i):
+        if i == len(accounts):
+            return
+        accounts[i] = sum(accounts[i])
+        helper(accounts, i+1)
+    
+    helper(accounts, 0)
+    return max(accounts)
