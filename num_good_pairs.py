@@ -13,3 +13,20 @@ def numIdenticalPairs(self, nums):
             if num == next_num:
                 matches += 1
     return matches
+
+def numIdenticalPairs(self, nums):
+    """
+    :type nums: List[int]
+    :rtype: int
+    """
+#         counting using buckets
+    count = 0
+    bucket = [0] * 101
+    for i, num in enumerate(nums):
+        bucket[num] += 1
+    for i, num in enumerate(nums):
+        bucket[num] = bucket[num] - 1
+        count += bucket[num]
+    return count
+
+
