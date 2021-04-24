@@ -26,7 +26,6 @@ class Solution(object):
                 ball_set.add(i) 
         output = []
         summation = 0
-        current_destination = 0
         for i in range(len(boxes)):
             for index in ball_set:
                 summation += abs(i-index)
